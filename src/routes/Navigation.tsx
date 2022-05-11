@@ -37,6 +37,7 @@ export const Navigation = () => {
                 path={route.path}
                 element={<route.Component />}
               />
+              
             ))
           }
 
