@@ -31,11 +31,11 @@ export const Navigation = () => {
 
         <Routes>
           {
-            routes.map(route => (
+            routes.map(({path, Component}) => (
               <Route
-                key={route.to}
-                path={route.path}
-                element={<route.Component />}
+                key={path}
+                path={path}
+                element={<Component />}
               />
             ))
           }
@@ -43,7 +43,7 @@ export const Navigation = () => {
           <Route path="lazy1" element={<LazyPage1 />} />
 
 
-          <Route path="/*" element={<Navigate to="/lazy1" replace />} />
+          <Route path="/*" element={<Navigate to={routes[0].to} replace />} />
         </Routes>
 
       </div>
